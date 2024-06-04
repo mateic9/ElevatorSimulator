@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Circle Color</title>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #FF0000; /* Red by default */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <input type="text" id="colorInput" placeholder="Enter a color">
+    <button onclick="changeCircleColor()">Change Color</button>
+
+    <script>
+        function changeCircleColor() {
+            var color = document.getElementById('colorInput').value;
+            alert("ddd");
+            fetch(`http://localhost:8080/changeColor?color=${color}`)
+                .then(response => response.text())
+                .then(color => {
+                    document.querySelector('.circle').style.backgroundColor = color;
+                });
+        }
+    </script>
+</body>
+</html>

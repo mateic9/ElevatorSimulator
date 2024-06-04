@@ -1,0 +1,12 @@
+*.class
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+*.log
+.DS_Store
+
+# Ignore everything in target directory except the jar file
+target/*
+!target/*.jar
